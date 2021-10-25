@@ -1,0 +1,156 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand"><img src="assets/LOGO.svg" width="68px" height="67,12px"
+                    alt="SafeCommunity"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recompensas">Recompensas</a>
+                    </li>
+                </ul>
+
+                <a routerLink="/login" class="btn login-btn" role="button">Fazer Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Fim Navbar -->
+
+    <!-- Primeira Sessao-->
+    <header class="container first-section">
+        <div class="row align-items-center">
+            <div class="col-md-6 first-text">
+                <h1 class="site-title">
+                    Faça parte do<br>SafeCommunity
+                </h1>
+                <p class="site-description">
+                    Junte-se a nossa comunidade e receba todo<br>
+                    apoio necessário e ajude podendo ganhar recompensas!
+                </p>
+
+                <a routerLink="/register-user" class="btn cadastrar-btn mt-3" role="button">Cadastrar-se <i
+                        class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="col-md-6 pt-5 facaparte-image">
+                <img src="assets/Facaparte.svg" class="img-fluid" data-aos="fade-in" data-aos-easing="linear"
+                    data-aos-duration="1500">
+            </div>
+        </div>
+    </header>
+    <br>
+    <!-- Fim da 1sessao -->
+    <!-- Main marcas -->
+    <main>
+        <div class="container">
+
+            <section class="brand-section">
+                <div class="row row-cols-2  row-cols-sm-2 row-cols-md-4">
+                    <div class="col">
+
+                        <img src="assets/marca1.svg" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="col">
+                        <img src="assets/marca2.svg" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="col">
+                        <img src="assets/marca3.svg" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="col">
+                        <img src="assets/marca4.svg" alt="" class="img-fluid">
+                    </div>
+
+                </div>
+            </section>
+            <!--Fim Marcas-->
+            <!-- Sobre -->
+            <br>
+            <section class="sobre">
+
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <img src="assets/Sobre.svg" alt="" class="img-fluid" data-aos="fade-right"
+                            data-aos-duration="1000">
+                    </div>
+
+                    <div class="col-md-5 offset-md-2" data-aos="fade-left" data-aos-duration="1500">
+                        <h2 class="sobre-titulo">Sobre</h2>
+                        <p class="sobre-descricao">
+                            Partimos de uma iniciativa de apoio à quem necessita de ajuda em seus afazeres do dia a dia
+                            utilizando a tecnologia.
+                            <br><br>
+                            Aqui no Safe Community temos um sistema que facilita a conexão entre pessoas que querem
+                            ajudar/doar com as que precisam receber.
+                        </p>
+
+                        <a href="sobre.html" class="btn more-btn mt-3" role="button">Saiba Mais</a>
+                    </div>
+
+                </div>
+            </section>
+            <!-- Fim Sobre-->
+            <!-- Recompensas --><br><br>
+            <section class="recompensas-row">
+                <div class="row align-items-center">
+
+                    <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
+                        <h2 class="recompensas-title"> Ajude e ganhe recompensas</h2>
+
+                        <p class="recompensas-description">
+                            Aproveite descontos e promoções exclusivas oferecidas pelos nossos parceiros,
+                            e use suas moedas para vivenciar experiências e trocar por brindes incríveis.
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 text-center">
+                        <img src="assets/Recompensas (1).svg" class="img-fluid" data-aos="fade-left"
+                            data-aos-duration="1500">
+                    </div>
+                </div>
+            </section>
+            <!-- Fim Recompensas-->
+            <br>
+            <br>
+
+            <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col text-center">
+                            <img src="assets/LogoSCsvg.svg" alt="SafeCommunity"><br>
+                            <p class="copyright mt-3">
+                                © 2021 | All rights reserved | Designed & Developed by
+                                <a href="https://github.com/yasminlopes">Bruno, Luis e Yasmin</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col text-center social-icon">
+                            <a href="#"><i class="bi bi-github"></i></a>
+                        </div>
+
+                        <button onclick="topFunction()" id="topBtn" title="Ir para o topo"><i
+                                class="bi bi-arrow-up"></i></button>
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+    <img routerLink="/home" class="logo" src="assets/LOGO.svg" width="68px" height="67,12px" alt="SafeCommunity">
+
+    <div class="login">
+    <div class="login-content">
+        <div class="login-painel">
+            <div id="retangulo">
+                <div class="info-title">
+                    <img src="assets/login.png">
+                    <span>LOGIN</span> 
+                </div>
+            </div>
+        </div>
+    
+        <form class="form" [formGroup]="loginForm">
+            <div class="login-input-group">
+                <label class="labelform">E-mail:</label>
+                <input formControlName="email" type="text" nbInput fullWidth>
+            </div>
+            <div class="login-input-group">
+                <label class="labelform">Senha:</label>
+                <input formControlName="senha" type="password" nbInput fullWidth>
+            </div>
+        </form>
+
+        <div class="login-config">
+            <span id="esqueci">Esqueci a senha</span>
+
+            <div class="login-checkbox">
+                <input type="checkbox" id="lembrarme" name="lembrarme" checked>
+                <label for="lembrarme">Lembrar-me</label>
+            </div>
+        </div>
+        
+        
+        <!--Botao-->
+        <div class="btn-align">
+            <button (click)="login()" type="btnlogin" class="btnlogin">Login</button>
+        </div>
+    </div>
+    </div>
+    
+</div>

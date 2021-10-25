@@ -1,0 +1,101 @@
+.container{
+    font-size: 15px;
+    font-family: 'Baloo Thambi 2', cursive;
+
+    .logo{
+        display: block;
+        cursor: pointer;
+    }
+
+    .login{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+
+        .login-content{
+            width: 400px;
+            height: 430px;
+        
+            .login-painel{
+                margin: 50px 0;
+
+                #retangulo{
+                    width: 22rem;
+                    height: 3.5rem;
+                    border-radius: 50px;
+                    background: #F2F2F2;
+                    margin: auto; 
+                    font-family: 'Baloo Thambi 2', cursive;
+                    line-height: 20px;
+                    font-size: 25px;
+                    text-align: center;
+                    color: #160045;
+                }
+
+                .info-title{
+                    position: relative;
+                    padding-top: 17px;
+                
+                    img{ 
+                        position: absolute;
+                        top:-15px;
+                        left: 0;
+                    }
+                
+                }
+            }
+
+            .form .login-input-group{
+                display: grid;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+
+                input{
+                    line-height: 1.65;
+                    margin: 10px 0;
+                }
+            }
+
+            .login-config{
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+
+                #esqueci{
+                    color:#36334A;
+                    font-family: 'Baloo Thambi 2', cursive;
+                    font-weight: 500;
+                    text-decoration: underline;
+                }
+        
+                .login-checkbox label{
+                    padding-left: 10px;
+                }
+            }
+
+            .btn-align{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                #lembrarme {
+                    color:#36334A;
+                    font-family: 'Baloo 2', cursive;
+                }
+
+                .btnlogin{
+                    width: 100%;
+                    height: 35px;
+                    background:#685396;
+                    border: none;
+                    border-radius:10px;
+                    color:#E5E5E5;
+                }
+            }
+        }
+    }
+}

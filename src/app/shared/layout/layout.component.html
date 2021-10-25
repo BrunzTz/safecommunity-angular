@@ -1,0 +1,29 @@
+<nb-layout>
+    <nb-layout-header>
+        <div class="content-header">
+            <div class="header-logo">
+                <img routerLink="/home" class="logo mr-3" src="assets/LOGO.svg" width="40" alt="SafeCommunity">
+                <label class="text-title">
+                    Safe Community
+                </label>
+            </div>
+            <div class="header-user">
+                <img class="logo mr-3" src="assets/user.png" width="50" alt="SafeCommunity">
+                <label class="text-title">
+                    {{ userName }}
+                </label>
+                <div class="control-power" (click)="disconnect()">
+                    <nb-icon icon="power-outline" status="control"></nb-icon>
+                </div>
+            </div>
+        </div>
+        
+        
+    </nb-layout-header>
+
+        <nb-layout-column class="colored-column-basic">
+            <ng-content></ng-content>
+        </nb-layout-column>
+    
+    <nb-layout-footer>Privacy Policy - Copyright © 2021 </nb-layout-footer>
+</nb-layout>

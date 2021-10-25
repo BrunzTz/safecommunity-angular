@@ -1,0 +1,124 @@
+.container{
+    font-size: 15px;
+    font-family: 'Baloo Thambi 2', cursive;
+
+    .logo{
+        display: block;
+        cursor: pointer;
+    }
+
+    .register-user{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .register-user-content{
+            width: 100%;
+            height: 100%;
+        
+            .register-user-painel{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                #retangulo{
+                    width:327px;
+                    height:50px;
+                    background: #f2f2f2;
+                    border-radius: 50px;
+                    margin: left; 
+                    font-weight: 500;
+                    font-size: 25px;
+                    text-align: center;
+                    color: #160045;
+                    line-height: 20px;
+                    margin: 80px
+                }
+
+                .info-title{
+                    position: relative;
+                    padding-top: 17px;
+                
+                    img{ 
+                        position: absolute;
+                        top:-15px;
+                        left: 0;
+                    }
+                
+                }
+            }
+
+            .register-form{
+                .note {
+                    text-align: center;
+                    height: 80px;
+                    background: -webkit-linear-gradient(left, #C0A3FF, #5454D4);
+                    color: #fff;
+                    font-weight: bold;
+                    line-height: 80px;
+                }
+
+                
+                .form-content {
+                    padding: 20px 40px;
+                    border: 1px solid #ced4da;
+                    margin-bottom: 2%;
+
+                    .form-control{
+                        border-radius:1.5rem;
+                    }
+            
+                }
+
+                .form .register-user-input-group{
+                    display: grid;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: 100%;
+                }
+
+                .register-user-config{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 0;
+
+                    #esqueci{
+                        color:#36334A;
+                        font-family: 'Baloo Thambi 2', cursive;
+                        font-weight: 500;
+                        text-decoration: underline;
+                    }
+            
+                    .register-user-checkbox label{
+                        padding-left: 10px;
+                    }
+                }
+
+                .btn-align{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    #possuiconta{
+                        color:#36334A;
+                        font-weight: 500;
+                        font-size: 14px;
+                        text-align: center;
+                    }
+
+                    .btnCad{
+                        border:none;
+                        border-radius:1.5rem;
+                        padding: 1%;
+                        width: 15rem;
+                        cursor: pointer;
+                        background: #5454D4;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

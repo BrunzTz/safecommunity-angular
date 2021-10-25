@@ -1,0 +1,64 @@
+<div class="container">
+    <img routerLink="/home" class="logo" src="assets/LOGO.svg" width="68px" height="67,12px" alt="SafeCommunity">
+
+    <div class="register-user">
+        <div class="register-user-content">
+            <div class="register-user-painel">
+                <div id="retangulo">
+                    <div class="info-title">
+                        <img src="assets/cad.png">
+                        <span>CADASTRO</span> 
+                    </div>
+                </div>
+            </div>
+        
+            <div class="register-form">
+                <div class="note">
+                    <p>Prencha os dados e finalize o seu cadastro:</p>
+                </div>
+
+                <div class="form-content">
+                    <form [formGroup]="registerUserForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input formControlName="nome" type="text" class="form-control" placeholder="Nome Completo" value=""/>
+                                </div> <br>
+                                <div class="form-group">
+                                    <input formControlName="endereco" type="text" class="form-control" placeholder="Endereço" value=""/>
+                                </div><br>
+                                <div class="form-group">
+                                    <input formControlName="telefone" type="text" class="form-control" placeholder="Telefone" value=""/>
+                                </div><br>
+                                <div class="form-group">
+                                    <input formControlName="senha" type="password" class="form-control" placeholder="Senha" value=""/>
+                                </div> <br>
+                            </div>
+                            <br>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input formControlName="cpf" type="text" class="form-control" placeholder="CPF" value=""/>
+                                </div> <br>
+                                <div class="form-group">
+                                    <input formControlName="email" type="text" class="form-control" placeholder="E-mail" value=""/>
+                                </div> <br>
+                                <div class="form-group">
+                                    <input formControlName="sexo" type="text" class="form-control" placeholder="Sexo (F ou M)" value=""/>
+                                </div> <br>
+                                
+                                <div class="form-group">
+                                    <input formControlName="confirmacao_senha" type="password" class="form-control" placeholder="Confirmar Senha" show= "*" value=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="btn-align">
+                        <button (click)="registerUser()" type="button" class="btnCad">Cadastrar-se</button>
+                        <a href="index.html" id="possuiconta">Já tem conta? <span class="facaregister-user">register-user</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
