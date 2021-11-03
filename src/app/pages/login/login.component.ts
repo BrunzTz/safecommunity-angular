@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NbToastrService } from '@nebular/theme';
+import { ToastrService } from 'ngx-toastr';
 import { UserLoggedService } from 'src/app/shared/services/user-logged/user-logged.service';
 import { environment } from 'src/environments/environment';
 
@@ -18,7 +20,8 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private formBuilder: FormBuilder,
     private router: Router,
-    private userLoggedService: UserLoggedService
+    private userLoggedService: UserLoggedService,
+    private toastr: ToastrService
     ) { }
 
   ngOnInit(): void {
@@ -33,11 +36,16 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.http.post<any>(`${environment.api}/auth`, this.loginForm.value).subscribe( res => {
+    this.http.post<any>(`${environment.api}/auth`, this.loginForm.value).subscribe( ( res ): any => {
       console.log(res)
-      this.userLoggedService.name = res[0].nome
-      
-      if(res) this.router.navigate(['/safecommunity'])
+      this.userLoggedService.user = res.user[0]
+      if(res.status === 200) {
+        this.toastr.success(res.mensagem);
+
+        return this.router.navigate(['/safecommunity'])
+      }
+
+      this.toastr.error(res.mensagem);
     })
   }
 

@@ -17,7 +17,8 @@ export class LayoutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userName = this.userLoggedService.name;
+    console.log(this.userLoggedService.user)
+    this.userName = this.userLoggedService.user.nome;
   }
 
   disconnect(){

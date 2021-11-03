@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Categoria } from 'src/app/model/categoria';
 import { UserLoggedService } from 'src/app/shared/services/user-logged/user-logged.service';
 import { environment } from 'src/environments/environment';
 
@@ -12,17 +14,13 @@ import { environment } from 'src/environments/environment';
 })
 export class CategoriaComponent implements OnInit {
 
-  countId: number = 4
   categoriaForm: FormGroup;
-  categorias: any[] = [
-    { id: 1, nome: 'Acessórios', descricao: 'Colares, anéis, brincos, coletes esportivos, gravatas, tocas, bonés, chapéus, roupão, jalecos, aventais (EPI), armações, quimonos esportivos, cintos'},
-    { id: 2, nome: 'Auxilio', descricao: 'Presta auxilia a necessidade de alguma pessoa'},
-    { id: 3, nome: 'Doação', descricao: 'Fazer uma doação de algo'},
-  ];
+  categorias: Categoria[] = []
 
   constructor(
     private http: HttpClient,
     private formBuilder: FormBuilder,
+    private toastr: ToastrService,
     private router: Router,
     private userLoggedService: UserLoggedService
     ) { }
@@ -40,19 +38,22 @@ export class CategoriaComponent implements OnInit {
   }
 
   cadastrar(){
-    this.categorias.push({id: this.countId,...this.categoriaForm.value})
-    this.countId++;
-    this.limpar();
     this.http.post<any>(`${environment.api}/categorias`, this.categoriaForm.value).subscribe( res => {
-      console.log(res)
-      //this.categorias.push(res)
+      if(res) {
+        this.toastr.success('Categoria cadastrada com sucesso!');
+        this.categorias.push(res)
+      }else{
+        this.toastr.error('Erro ao cadastrar categoria!');
+      }
     })
+    this.limpar();
   }
 
   listarCategorias(){
     this.http.get<any>(`${environment.api}/categorias`).subscribe( res => {
       console.log(res)
-      this.categorias.push(res)
+      this.categorias = this.categorias.concat(res)
+      console.log(this.categorias)
     })
   }
 

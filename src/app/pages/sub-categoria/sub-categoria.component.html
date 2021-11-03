@@ -1,19 +1,29 @@
-<h4>Categoria</h4>
+<h4>Sub Categoria</h4>
 <hr>
 
-<form [formGroup]="categoriaForm">
+<form [formGroup]="subCategoriaForm">
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Categorias</label>
+        <ng-select [items]="categorias" 
+           bindLabel="nome" 
+           bindValue="id_categorias" 
+           formControlName="categoria">
+        </ng-select>
+    </div>
 
     <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
         <input type="email" class="form-control" id="nome" formControlName="nome">
     </div>
+
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição</label>
         <textarea class="form-control" id="descricao" rows="3" formControlName="descricao"></textarea>
     </div>
 
     <div style="text-align: end;">
-        <button type="button" class="btn btn-primary mr-3" (click)="cadastrar()" [disabled]="categoriaForm.invalid">Cadastrar</button>
+        <button type="button" class="btn btn-primary mr-3" (click)="cadastrar()" [disabled]="subCategoriaForm.invalid">Cadastrar</button>
         <button type="button" class="btn btn-danger">Limpar</button>
     </div>
 
@@ -25,15 +35,17 @@
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th scope="col">Categoria</th>
         <th scope="col">Nome</th>
         <th scope="col">Descrição</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let categoria of categorias">
-        <th scope="row">{{categoria.id_categorias}}</th>
-        <td>{{categoria.nome}}</td>
-        <td>{{categoria.descricao}}</td>
+      <tr *ngFor="let subCategoria of subCategorias">
+        <th scope="row">{{subCategoria.id_subcategorias}}</th>
+        <td>Indefinido</td>
+        <td>{{subCategoria.nome}}</td>
+        <td>{{subCategoria.descricao}}</td>
       </tr>
     </tbody>
   </table>

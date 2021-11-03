@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RatingComponent } from './pages/rating/rating.component';
 import { RecompensasComponent } from './pages/recompensas/recompensas.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
+import { SubCategoriaComponent } from './pages/sub-categoria/sub-categoria.component';
 import { WalletComponent } from './pages/wallet/wallet.component';
 
 const routes: Routes = [
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: 'categoria',
         component: CategoriaComponent
+      },
+      {
+        path: 'subcategoria',
+        component: SubCategoriaComponent
       },
       {
         path: 'rating',

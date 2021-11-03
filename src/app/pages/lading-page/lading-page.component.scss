@@ -6,6 +6,11 @@ Designer    : Yasmin Lopes
 Version     : 1.0.0
 -------------------------------------------------------*/
 
+::ng-deep body{
+  padding: 0 !important;
+  margin: 10px 0 !important;
+}
+
 .container {
     font-family: "DM Sans", sans-serif;
 }

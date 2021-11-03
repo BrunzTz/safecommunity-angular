@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { LadingPageComponent } from './lading-page/lading-page.component';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +15,8 @@ import { ConfiguracoesComponent } from './configuracoes/configuracoes.component'
 import { AjudasComponent } from './ajudas/ajudas.component';
 import { ChatComponent } from './chat/chat.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { SubCategoriaComponent } from './sub-categoria/sub-categoria.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
     declarations: [
@@ -28,7 +30,8 @@ import { CategoriaComponent } from './categoria/categoria.component';
         ConfiguracoesComponent,
         AjudasComponent,
         ChatComponent,
-        CategoriaComponent
+        CategoriaComponent,
+        SubCategoriaComponent
     ],
     imports: [
         CommonModule,
@@ -37,7 +40,9 @@ import { CategoriaComponent } from './categoria/categoria.component';
         NbIconModule,
         NbFormFieldModule,
         RouterModule,
-        SharedModule
+        SharedModule,
+        NgSelectModule,
+        FormsModule
     ],
 })
 export class PagesModule { }
