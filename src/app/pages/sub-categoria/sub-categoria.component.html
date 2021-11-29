@@ -23,8 +23,12 @@
     </div>
 
     <div style="text-align: end;">
-        <button type="button" class="btn btn-primary mr-3" (click)="cadastrar()" [disabled]="subCategoriaForm.invalid">Cadastrar</button>
-        <button type="button" class="btn btn-danger">Limpar</button>
+        <button type="button" class="btn btn-primary mr-3" (click)="salvar()" [disabled]="subCategoriaForm.invalid">
+          {{ isAlterando ? 'Atualizar' : 'Cadastrar'}}
+        </button>
+        <button type="button" class="btn btn-danger" (click)="resetForm()">
+          {{ isAlterando ? 'Cancelar' : 'Limpar'}}
+        </button>
     </div>
 
 </form>
@@ -38,14 +42,19 @@
         <th scope="col">Categoria</th>
         <th scope="col">Nome</th>
         <th scope="col">Descrição</th>
+        <th scope="col" class="text-center" width="100">Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let subCategoria of subCategorias">
         <th scope="row">{{subCategoria.id_subcategorias}}</th>
-        <td>Indefinido</td>
+        <td>{{subCategoria.categoria}}</td>
         <td>{{subCategoria.nome}}</td>
         <td>{{subCategoria.descricao}}</td>
+        <td class="text-center" width="100">
+          <i class='bx bxs-pencil text-warning mr-3 add-cursor-pointer' (click)="preencherForm(subCategoria)"></i>
+          <i class='bx bxs-trash text-danger add-cursor-pointer' (click)="excluir(subCategoria.id_subcategorias)"></i>
+        </td>
       </tr>
     </tbody>
   </table>

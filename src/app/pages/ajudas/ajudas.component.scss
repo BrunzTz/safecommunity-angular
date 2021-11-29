@@ -1,95 +1,136 @@
-.container{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+.header-ajuda{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 33px;
+}
+
+.card {
+  max-width: 100%;
+  height: 370px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.2s ease;
+
+  &:hover{
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transform: translateY(-10px);
   }
-  .container .card{
-    max-width:100%;
-    width:350px;
-    height:370px;
-    background:#fff;
-    border-radius:5px;
-    position:relative;
-    transition:all .2s ease;
+}
+
+.card .card-img {
+  background: gray;
+  width: 100%;
+  height: 190px;
+  border-radius: 5px 5px 0 0;
+
+  img{
+    width: 100%;
+    height: 190px;
+    filter: brightness(0.7);
+    border-radius: inherit;
+    transition: 0.2s ease-in-out;
+    &:hover{
+      filter: brightness(1);
+    }
   }
-  .container .card:hover{
-    box-shadow:2px 2px 3px rgba(0,0,0,.1);
-    cursor:pointer;
-    transform:translateY(-10px);
-  }
-  .container .card:hover .btn{
-    visibility:visible;
-  }
-  .container .card:hover img{
-    filter:brightness(1);
-  }
-  .card .card-img{
-    background:gray;
-    width:350px;
-    height:270px;
-    z-index:990;
-    border-radius:5px 5px 0 0;
-  }
-  .card-img img{
-    width:100%;
-    height:100%;
-    filter:brightness(.7);
-    border-radius:inherit;
-    transition:.2s ease-in-out;
-  }
-  .card .card-action{
-    padding: 10px;
-    margin:25px 0 0 20px;
-    display:flex;
-    position:relative;
-    flext-direction:column;
-    justify-content:space-between;
-  }
-  
-  .card .card-img .circle {
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    position: absolute;
-    bottom: 80px;
-    left: 15px;
-    border: 1px solid #ff0;
-    border-radius:50%;
-    box-shadow:0 6px 10px rgba(0,0,0,.3);
-  /*   z-index: 999; */
-    display:flex;
-    justify-content:center;
-    align-items:center;
-  }
-  .card .card-img .circle img{
-    width:60%;
-    position:abolute;
-    user-select:none;
-  }
-  .card .card-action .title{
+}
+
+.card-description {
+  padding: 10px;
+  display: grid;
+  position: relative;
+  height: 130px;
+  grid-template-rows: 27px 20px 1fr;
+
+  .title {
     font-size: 22px;
-    letter-spacing:2px;
-    font-style:bold;
+    letter-spacing: 2px;
   }
-  .card .card-action span{
-    font-size:12px;
-    color:gray;
-    letter-spacing:2px;
+
+  .sub-title{
+    font-size: 11px;
+    color: gray;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 12px;
+    color: gray;
+    letter-spacing: 2px;
+  }
+
+  .tag-date{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #2f6fff;
+    color: white;
+    padding: 0 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+}
+
+.btn-group-ajuda{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 45px;
+
+  .btn-padrao{
+    padding: 7px;
+    border: none;
+    width: 120px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+      transform: scale(1.1);
+    }
   }
   
-  .btn-ajudar .btn{
-    padding:10px;
-    border:none;
-    visibility:hidden;
-    border-radius:5px;
-    background: #41d9c2;
-    color:#fff;
-    cursor:pointer;
-    outline:none;
-    box-shadow: 2px 2px 4px rgba(0,0,0,.1);
-    transition:all .2s ease-in-out;
+  .btn-ajudar .btn {
+    background: #543792;
+    &:hover {
+      background: #7755c0;
+    }
   }
-  .btn-ajudar .btn:hover{
-    background: #29d654;
+  
+  .btn-conversar .btn{
+    background: #ffc107;
+    &:hover {
+      background: #ffd044;
+    }
   }
+}
+
+
+.add-item{
+  width: 30px;
+  background: #29d654;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  &:hover{
+    transform: scale(1.1);
+    background: #40ec6b;
+    cursor: pointer;
+  }
+  i{
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+  }
+}

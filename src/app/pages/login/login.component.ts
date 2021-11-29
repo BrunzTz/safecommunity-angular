@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
       console.log(res)
       this.userLoggedService.user = res.user[0]
       if(res.status === 200) {
+        localStorage.setItem('user-sf', JSON.stringify(res.user[0]))
         this.toastr.success(res.mensagem);
 
         return this.router.navigate(['/safecommunity'])

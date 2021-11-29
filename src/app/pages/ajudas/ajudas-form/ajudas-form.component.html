@@ -1,0 +1,45 @@
+<h4>{{ idEditar ? 'Atualizar' : 'Cadastrar'}} Ajuda</h4>
+<hr>
+
+<form [formGroup]="ajudasForm">
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Categorias</label>
+        <ng-select [items]="categorias" 
+           bindLabel="nome" 
+           bindValue="id_categorias" 
+           formControlName="id_categoria">
+        </ng-select>
+    </div>
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Sub Categorias</label>
+        <ng-select [items]="subCategorias" 
+           bindLabel="nome" 
+           bindValue="id_subcategorias" 
+           formControlName="id_subcategoria">
+        </ng-select>
+    </div>
+
+    <div class="mb-3" *ngIf="idEditar">
+        <label for="nome" class="form-label">Status</label>
+        <ng-select [items]="status" 
+           bindLabel="nome" 
+           bindValue="valor" 
+           formControlName="status">
+        </ng-select>
+    </div>
+
+    <div class="mb-3">
+        <label for="comentario" class="form-label">Comentario</label>
+        <textarea class="form-control" id="comentario" rows="3" formControlName="comentario"></textarea>
+    </div>
+
+    <div style="text-align: end;">
+        <button type="button" class="btn btn-primary mr-3" (click)="salvar()" [disabled]="ajudasForm.invalid">
+            {{ idEditar ? 'Atualizar' : 'Cadastrar'}}
+        </button>
+        <button type="button" class="btn btn-danger" (click)="voltarParaListagem()">Cancelar</button>
+    </div>
+
+</form>

@@ -15,7 +15,9 @@ import { environment } from 'src/environments/environment';
 export class CategoriaComponent implements OnInit {
 
   categoriaForm: FormGroup;
-  categorias: Categoria[] = []
+  categorias: Categoria[] = [];
+  isAlterando: boolean = false;
+  idEditar: number | null = null;
 
   constructor(
     private http: HttpClient,
@@ -49,6 +51,24 @@ export class CategoriaComponent implements OnInit {
     this.limpar();
   }
 
+  atualizar(){
+    this.http.put<any>(`${environment.api}/categorias/${this.idEditar}`, this.categoriaForm.value).subscribe( res => {
+      if(res) {
+        console.log(res)
+        this.toastr.success('Categoria atualizada com sucesso!');
+        this.categorias = this.categorias.map((cat: Categoria) => {
+          if(cat.id_categorias != this.idEditar) return cat;
+
+          return res;
+        })
+        this.resetForm();
+      }else{
+        this.toastr.error('Erro ao atualizar categoria!');
+      }
+    })
+    this.limpar();
+  }
+
   listarCategorias(){
     this.http.get<any>(`${environment.api}/categorias`).subscribe( res => {
       console.log(res)
@@ -62,6 +82,37 @@ export class CategoriaComponent implements OnInit {
       nome: '',
       descricao: ''
     })
+  }
+
+  preencherForm(categoria: Categoria){
+    this.isAlterando = true;
+    this.idEditar = categoria.id_categorias;
+
+    this.categoriaForm.patchValue({
+      nome: categoria.nome,
+      descricao: categoria.descricao
+    })
+  }
+
+  salvar(){
+    if(this.idEditar)
+      return this.atualizar();
+
+    this.cadastrar();
+  }
+
+  excluir(id:number){
+    this.http.delete<any>(`${environment.api}/categorias/${id}`).subscribe( res => {
+      console.log(res)
+      this.toastr.success('Categoria deletada com sucesso!');
+      this.categorias = this.categorias.filter( cat => cat.id_categorias != id)
+    })
+  }
+
+  resetForm(){
+    this.isAlterando = false;
+    this.idEditar = null;
+    this.limpar();
   }
 
 }

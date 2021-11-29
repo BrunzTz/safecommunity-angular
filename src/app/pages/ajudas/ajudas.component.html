@@ -1,58 +1,99 @@
-<h4>Ajudas</h4>
+<div class="header-ajuda">
+  <h4>Ajudas</h4>
+  <div class="add-item" routerLink="/safecommunity/ajudas/cadastrar">
+    <i class="bx bx-plus"></i>
+  </div>
+</div>
 <hr>
 
 <div class="input-group mb-3">
-    <input type="text" class="form-control">
-    <i class="input-group-text bx bx-search"></i>
+  <input type="text" class="form-control" placeholder="Pesquisar por...">
+  <i class="input-group-text bx bx-search"></i>
 </div>
 
-<div id="app" class="container">
-    <div  class="card">
+<h4>Minhas Solicitações</h4>
+<hr>
+<div class="row mb-5">
+  <div class="col-md-4" *ngFor="let item of ajudasSolicitadas">
+    <div class="card">
       <div class="card-img">
-        <img src="assets/exemplos/carona.jpg" alt="">
-        <div class="circle"><img src="https://s.svgbox.net/files.svg?ic=sketch&fill=000" width="32" height="32"></div>
+        <img src="assets/images/sem-foto.png" alt="">
       </div>
-      <div class="card-action">
-        <div>
-          <div class="title">Carona</div>
-        <span>Preciso de ajuda para me levar até o centro</span>
-        <span>01 Nov 2021</span>
-        </div>
-        <div class="btn-ajudar">
-          <button class="btn">Ajudar</button>
-        </div>      
+      <div class="card-description">
+        <div class="title">{{item.categoria_nome}}</div>
+        <div class="sub-title">{{item.subcategoria_nome}}</div>
+        <span class="description">{{item.comentario}}</span>
+        <span class="tag-date">01 Nov 2021</span>
       </div>
-    </div>
-    <div  class="card">
-      <div class="card-img">
-        <img src="assets/exemplos/pedreiro.jpg" alt="">
-        <div class="circle"><img src="https://s.svgbox.net/files.svg?ic=sketch&fill=000" width="32" height="32"></div>
-      </div>
-      <div class="card-action">
-        <div>
-          <div class="title">Pedreiro</div>
-        <span>Algum pedreiro disponivel para construir um muro em casa</span>
-        <span>20 Out 2021</span>
-        </div>
-        <div class="btn-ajudar">
-          <button class="btn">Ajudar</button>
-        </div>      
-      </div>
-    </div>
-    <div  class="card">
-      <div class="card-img">
-        <img src="assets/exemplos/doacao.jpg" alt="">
-        <div class="circle"><img src="https://s.svgbox.net/files.svg?ic=sketch&fill=000" width="32" height="32"></div>
-      </div>
-      <div class="card-action">
-        <div>
-          <div class="title">Doação</div>
-        <span>Necessito de uma doação de roupa de frio</span>
-        <span>15 Jul 2021</span>
-        </div>
-        <div class="btn-ajudar">
-          <button class="btn">Ajudar</button>
-        </div>      
+      <div class="btn-group-ajuda">
+          <button class="btn btn-padrao btn-warning" routerLink="/safecommunity/ajudas/{{item.id_ajuda}}/alterar">Editar</button>
+          <button class="btn btn-padrao btn-danger" (click)="excluirSolicitacao(item.id_ajuda)">Excluir</button>
       </div>
     </div>
   </div>
+</div>
+
+<h4>Disponíveis</h4>
+<hr>
+<div class="row mb-4">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-img">
+        <img src="assets/exemplos/carona.jpg" alt="">
+      </div>
+      <div class="card-description">
+        <div class="title">Carona</div>
+        <span class="description">Preciso de ajuda para me levar até o centro</span>
+        <span class="tag-date">01 Nov 2021</span>
+      </div>
+      <div class="btn-group-ajuda">
+        <div class="btn-ajudar">
+          <button class="btn btn-padrao">Ajudar</button>
+        </div>
+        <div class="btn-conversar">
+          <button class="btn btn-padrao">Conversar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-img">
+        <img src="assets/exemplos/pedreiro.jpg" alt="">
+      </div>
+      <div class="card-description">
+        <div class="title">Pedreiro</div>
+        <span class="description">Algum pedreiro disponivel para construir um muro em casa</span>
+        <span class="tag-date">20 Out 2021</span>
+      </div>
+      <div class="btn-group-ajuda">
+        <div class="btn-ajudar">
+          <button class="btn btn-padrao">Ajudar</button>
+        </div>
+        <div class="btn-conversar">
+          <button class="btn btn-padrao">Conversar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-img">
+        <img src="assets/exemplos/doacao.jpg" alt="">
+      </div>
+      <div class="card-description">
+        <div class="title">Doação</div>
+        <span class="description">Necessito de uma doação de roupa de frio</span>
+        <span class="tag-date">15 Jul 2021</span>
+      </div>
+      <div class="btn-group-ajuda">
+        <div class="btn-ajudar">
+          <button class="btn btn-padrao">Ajudar</button>
+        </div>
+        <div class="btn-conversar">
+          <button class="btn btn-padrao">Conversar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -17,6 +17,9 @@ import { ChatComponent } from './chat/chat.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { SubCategoriaComponent } from './sub-categoria/sub-categoria.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AjudasFormComponent } from './ajudas/ajudas-form/ajudas-form.component';
+import { AjudasPendenteComponent } from './ajudas/ajudas-pendente/ajudas-pendente.component';
+import { AjudasConcluidaComponent } from './ajudas/ajudas-concluida/ajudas-concluida.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +34,10 @@ import { NgSelectModule } from '@ng-select/ng-select';
         AjudasComponent,
         ChatComponent,
         CategoriaComponent,
-        SubCategoriaComponent
+        SubCategoriaComponent,
+        AjudasFormComponent,
+        AjudasPendenteComponent,
+        AjudasConcluidaComponent
     ],
     imports: [
         CommonModule,

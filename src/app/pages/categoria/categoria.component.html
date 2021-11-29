@@ -13,8 +13,12 @@
     </div>
 
     <div style="text-align: end;">
-        <button type="button" class="btn btn-primary mr-3" (click)="cadastrar()" [disabled]="categoriaForm.invalid">Cadastrar</button>
-        <button type="button" class="btn btn-danger">Limpar</button>
+        <button type="button" class="btn btn-primary mr-3" (click)="salvar()" [disabled]="categoriaForm.invalid">
+          {{ isAlterando ? 'Atualizar' : 'Cadastrar'}}
+        </button>
+        <button type="button" class="btn btn-danger" (click)="resetForm()">
+          {{ isAlterando ? 'Cancelar' : 'Limpar'}}
+        </button>
     </div>
 
 </form>
@@ -27,6 +31,7 @@
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Descrição</th>
+        <th scope="col" class="text-center" width="100">Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -34,6 +39,10 @@
         <th scope="row">{{categoria.id_categorias}}</th>
         <td>{{categoria.nome}}</td>
         <td>{{categoria.descricao}}</td>
+        <td class="text-center" width="100">
+          <i class='bx bxs-pencil text-warning mr-3 add-cursor-pointer' (click)="preencherForm(categoria)"></i>
+          <i class='bx bxs-trash text-danger add-cursor-pointer' (click)="excluir(categoria.id_categorias)"></i>
+        </td>
       </tr>
     </tbody>
   </table>

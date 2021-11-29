@@ -17,7 +17,10 @@ export class LayoutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.userLoggedService.user)
+    const user = localStorage.getItem('user-sf')
+    
+    if(user) this.userLoggedService.user = JSON.parse(user);
+    
     this.userName = this.userLoggedService.user.nome;
   }
 

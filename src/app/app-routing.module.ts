@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AjudasConcluidaComponent } from './pages/ajudas/ajudas-concluida/ajudas-concluida.component';
+import { AjudasFormComponent } from './pages/ajudas/ajudas-form/ajudas-form.component';
+import { AjudasPendenteComponent } from './pages/ajudas/ajudas-pendente/ajudas-pendente.component';
 import { AjudasComponent } from './pages/ajudas/ajudas.component';
 import { CategoriaComponent } from './pages/categoria/categoria.component';
 import { ChatComponent } from './pages/chat/chat.component';
@@ -45,6 +48,22 @@ const routes: Routes = [
       {
         path: 'ajudas',
         component: AjudasComponent
+      },
+      {
+        path: 'ajudas/cadastrar',
+        component: AjudasFormComponent
+      },
+      {
+        path: 'ajudas/:id/alterar',
+        component: AjudasFormComponent
+      },
+      {
+        path: 'ajudas-pendente',
+        component: AjudasPendenteComponent
+      },
+      {
+        path: 'ajudas-concluida',
+        component: AjudasConcluidaComponent
       },
       {
         path: 'chat',
