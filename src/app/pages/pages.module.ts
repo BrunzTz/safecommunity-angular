@@ -20,6 +20,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { AjudasFormComponent } from './ajudas/ajudas-form/ajudas-form.component';
 import { AjudasPendenteComponent } from './ajudas/ajudas-pendente/ajudas-pendente.component';
 import { AjudasConcluidaComponent } from './ajudas/ajudas-concluida/ajudas-concluida.component';
+import { HistoricoComponent } from './historico/historico.component';
+import { HomeComponent } from './home/home.component';
+import { ProdutoComponent } from './recompensas/produto/produto.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +40,10 @@ import { AjudasConcluidaComponent } from './ajudas/ajudas-concluida/ajudas-concl
         SubCategoriaComponent,
         AjudasFormComponent,
         AjudasPendenteComponent,
-        AjudasConcluidaComponent
+        AjudasConcluidaComponent,
+        HistoricoComponent,
+        HomeComponent,
+        ProdutoComponent
     ],
     imports: [
         CommonModule,

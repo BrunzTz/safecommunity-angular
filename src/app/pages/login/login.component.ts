@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('user-sf', JSON.stringify(res.user[0]))
         this.toastr.success(res.mensagem);
 
-        return this.router.navigate(['/safecommunity'])
+        return this.router.navigate(['/safecommunity/home'])
       }
 
       this.toastr.error(res.mensagem);

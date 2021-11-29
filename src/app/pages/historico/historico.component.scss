@@ -22,25 +22,35 @@
     padding: 5px;
  }
 
+.green {
+    color: green;
+}
+
+.table-responsive {
+    color: #250074;
+}
+
+/* RATING */
+
 header {
-	margin: 0 auto;
-	padding: 1em;
-	text-align: center;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
 }
 
 header h1 {
-  font-weight: 600;
-	font-size: 3em;
-	margin: 0;
+    font-weight: 600;
+    font-size: 3em;
+    margin: 0;
 }
 
 .wrapper {
-	line-height: 1.5em;
-	margin: 0 auto;
-	padding: 2em 0 3em;
-	width: 90%;
-	max-width: 2000px;
-	overflow: hidden;
+    line-height: 1.5em;
+    margin: 0 auto;
+    padding: 2em 0 3em;
+    width: 90%;
+    max-width: 2000px;
+    overflow: hidden;
 }
 
 table {
@@ -50,24 +60,25 @@ table {
 }
 
 th {
-  background: #C0A3FF;
+    background: #c0a3ff;
     font-weight: bold;
     white-space: nowrap;
 }
 
-td, th {
+td,
+th {
     padding: 1em 1.5em;
     text-align: left;
 }
 
 tbody tr:nth-child(2n-1) {
     background-color: #f5f5f5;
-    transition: all .125s ease-in-out;
+    transition: all 0.125s ease-in-out;
 }
 tbody tr:hover {
     background-color: #a8a8fd;
 }
 
 td.rank {
-	text-transform: capitalize;
+    text-transform: capitalize;
 }

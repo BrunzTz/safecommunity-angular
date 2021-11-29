@@ -7,10 +7,13 @@ import { AjudasComponent } from './pages/ajudas/ajudas.component';
 import { CategoriaComponent } from './pages/categoria/categoria.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ConfiguracoesComponent } from './pages/configuracoes/configuracoes.component';
+import { HistoricoComponent } from './pages/historico/historico.component';
+import { HomeComponent } from './pages/home/home.component';
 import { LadingPageComponent } from './pages/lading-page/lading-page.component';
 import { LayoutMainComponent } from './pages/layout-main/layout-main.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RatingComponent } from './pages/rating/rating.component';
+import { ProdutoComponent } from './pages/recompensas/produto/produto.component';
 import { RecompensasComponent } from './pages/recompensas/recompensas.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { SubCategoriaComponent } from './pages/sub-categoria/sub-categoria.component';
@@ -34,6 +37,14 @@ const routes: Routes = [
         component: CategoriaComponent
       },
       {
+        path: 'historico',
+        component: HistoricoComponent
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
         path: 'subcategoria',
         component: SubCategoriaComponent
       },
@@ -44,6 +55,10 @@ const routes: Routes = [
       {
         path: 'recompensas',
         component: RecompensasComponent
+      },
+      {
+        path: 'recompensas/produto',
+        component: ProdutoComponent
       },
       {
         path: 'ajudas',
