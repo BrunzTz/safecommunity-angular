@@ -5,15 +5,15 @@ O projeto foi criado em Angular [Angular CLI](https://github.com/angular/angular
 # Getting Started
     Guia de como começar a visualização do front-end do SafeCommunity:
 1.	Instalando dependencias
-        npm install
+        `npm install`
 
 2.	Dependencias do Software
-        node
-        npm
-        ng cli
+        `node`
+        `npm`
+        `ng cli`
 
 3.	APIs
-        Manual - localhost:3001
+        `Manual - localhost:3001`
 
 ## Development server
 
