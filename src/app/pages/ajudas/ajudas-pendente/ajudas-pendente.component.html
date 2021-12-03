@@ -13,7 +13,12 @@
           <img src="assets/images/sem-foto.png" alt="">
         </div>
         <div class="card-description">
-          <div class="title">{{item.nome_categoria}}</div>
+          <div class="title">
+              {{item.nome_categoria}}
+              <small>
+                ( <i class='bx bxs-phone'></i> {{item.telefone}})
+              </small>
+            </div>
           <div class="sub-title">{{item.nome_subcategoria}}</div>
           <span class="description">{{item.comentario}}</span>
           <span class="tag-date">01 Nov 2021</span>

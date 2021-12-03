@@ -5,6 +5,7 @@ export interface Ajudas {
     id_usuario_auxiliado: number;
     status: string;
     subcategoria_nome: string;
+    telefone_pessoa_auxiliada:string;
 }
 
 export const STATUS: any = [
