@@ -43,11 +43,16 @@
     display: grid;
     position: relative;
     height: 130px;
-    grid-template-rows: 35px 1fr;
+    grid-template-rows: 27px 20px 1fr;
   
     .title {
       font-size: 22px;
       letter-spacing: 2px;
+    }
+    .sub-title{
+      font-size: 11px;
+      color: gray;
+      font-weight: bold;
     }
   
     .description {

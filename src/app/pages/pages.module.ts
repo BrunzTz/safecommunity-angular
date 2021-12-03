@@ -23,6 +23,7 @@ import { AjudasConcluidaComponent } from './ajudas/ajudas-concluida/ajudas-concl
 import { HistoricoComponent } from './historico/historico.component';
 import { HomeComponent } from './home/home.component';
 import { ProdutoComponent } from './recompensas/produto/produto.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
     declarations: [
@@ -54,7 +55,8 @@ import { ProdutoComponent } from './recompensas/produto/produto.component';
         RouterModule,
         SharedModule,
         NgSelectModule,
-        FormsModule
+        FormsModule,
+        ModalModule
     ],
 })
 export class PagesModule { }

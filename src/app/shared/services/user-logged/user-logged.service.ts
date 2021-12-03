@@ -9,6 +9,14 @@ export class UserLoggedService {
 
   public user: User = USER;
 
+  public get idUsuario(){
+    return this.user.id_usuario;
+  }
+
+  public get isAdmin(): boolean{
+    return this.user.administrator == 1;
+  }
+
   constructor() { }
 
   disconnect(){

@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 export class AjudasComponent implements OnInit {
 
   public ajudasSolicitadas: Ajudas[] = []
+  public ajudasDisponiveis: any[] = []
 
   constructor(
     private http: HttpClient,
@@ -25,7 +26,8 @@ export class AjudasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listarSubCategorias();
+    this.listarAjudasSolicitadas();
+    this.listarAjudasDisponiveis();
   }
 
   excluirSolicitacao(id:number){
@@ -36,11 +38,26 @@ export class AjudasComponent implements OnInit {
     })
   }
 
-  listarSubCategorias(){
+  listarAjudasSolicitadas(){
     this.http.get<any>(`${environment.api}/ajudas/auxiliado/${this.idUsuario}`).subscribe( res => {
       console.log(res)
       this.ajudasSolicitadas = res.ajudas
       console.log(this.ajudasSolicitadas)
+    })
+  }
+
+  listarAjudasDisponiveis(){
+    this.http.get<any>(`${environment.api}/ajudas/disponiveis/${this.idUsuario}`).subscribe( res => {
+      console.log("DISPONIVEIS",res)
+      this.ajudasDisponiveis = res.ajudas
+      console.log(this.ajudasDisponiveis)
+    })
+  }
+
+  ajudar(ajuda: any){
+    this.http.put<any>(`${environment.api}/ajudas/contribuinte/${this.idUsuario}`, ajuda).subscribe( res => {
+      this.ajudasDisponiveis = this.ajudasDisponiveis.filter( ad => ad.id_ajuda != ajuda.id_ajuda)
+      this.toastr.info('Ajuda atribuida');
     })
   }
   

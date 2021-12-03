@@ -8,5 +8,6 @@ export const USER: User = {
     id_pessoa: null,
     id_usuario: null,
     nome: "Não Identificado",
-    sexo: ""
+    sexo: "",
+    administrator: 0
 }

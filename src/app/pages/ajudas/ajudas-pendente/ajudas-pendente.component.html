@@ -6,6 +6,45 @@
     <i class="input-group-text bx bx-search"></i>
 </div>
 
+<div class="row mb-5">
+    <div class="col-md-4" *ngFor="let item of ajudasPendentes">
+      <div class="card">
+        <div class="card-img">
+          <img src="assets/images/sem-foto.png" alt="">
+        </div>
+        <div class="card-description">
+          <div class="title">{{item.nome_categoria}}</div>
+          <div class="sub-title">{{item.nome_subcategoria}}</div>
+          <span class="description">{{item.comentario}}</span>
+          <span class="tag-date">01 Nov 2021</span>
+        </div>
+        <div class="btn-group-ajuda">
+            <div class="btn-finalizar">
+                <button class="btn btn-padrao" (click)="openModalClassificacao(template, item)">Finalizar</button>
+            </div>
+            <div class="btn-conversar">
+                <button class="btn btn-padrao">Conversar</button>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Classificação</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="form-control" [formControl]="classificacaoForm" placeholder="Avalie de 1 a 5">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-padrao btn-success" (click)="finalizar()">Confirmar</button>
+    </div>
+  </ng-template>
+<!-- 
 <div class="row">
     <div class="col-md-4">
         <div class="card">
@@ -67,4 +106,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

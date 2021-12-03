@@ -6,5 +6,6 @@ export interface User {
     id_pessoa: number | null,
     id_usuario: number | null,
     nome: string,
-    sexo: string
+    sexo: string,
+    administrator: number
 }

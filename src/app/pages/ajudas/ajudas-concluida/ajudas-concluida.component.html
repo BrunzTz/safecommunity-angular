@@ -1,4 +1,4 @@
-<h4>Ajudas - Pendentes</h4>
+<h4>Ajudas - Concluidas</h4>
 <hr>
 
 <div class="input-group mb-3">
@@ -6,6 +6,175 @@
     <i class="input-group-text bx bx-search"></i>
 </div>
 
+<h4>Solicitadas</h4>
+<hr>
+<div class="row mb-5">
+    <div class="col-md-4" *ngFor="let item of ajudasAuxiliadas">
+      <div class="card">
+        <div class="card-img">
+          <img src="assets/images/sem-foto.png" alt="">
+        </div>
+        <div class="ajuda-concluido">
+            <span class="icon-star">
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 1">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                </ng-container>
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 2">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                </ng-container>
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 3">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                </ng-container>
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 4">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                </ng-container>
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 5">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </ng-container>
+            </span>
+            <span class="badge-finalizado">Finalizado</span>
+        </div>
+        <div class="card-description">
+          <div class="title">{{item.nome_categoria}}</div>
+          <div class="sub-title">{{item.nome_subcategoria}}</div>
+          <span class="description">{{item.comentario}}</span>
+          <span class="tag-date">01 Nov 2021</span>
+        </div>
+        <div class="btn-group-ajuda">
+            <div class="btn-detalhes">
+                <button class="btn btn-padrao" (click)="openModal(template, item)">Detalhes</button>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<h4>Contribuidas</h4>
+<hr>
+<div class="row mb-5">
+    <div class="col-md-4" *ngFor="let item of ajudasContribuidas">
+      <div class="card">
+        <div class="card-img">
+          <img src="assets/images/sem-foto.png" alt="">
+        </div>
+        <div class="ajuda-concluido">
+            <span class="icon-star">
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 1">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                </ng-container>
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 2">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                </ng-container>
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 3">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                    <i class='bx bx-star'></i>
+                </ng-container>
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 4">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                </ng-container>
+                <ng-container *ngIf="Math.ceil(item.classificacao) == 5">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </ng-container>
+            </span>
+            <span class="badge-finalizado">Finalizado</span>
+        </div>
+        <div class="card-description">
+          <div class="title">{{item.nome_categoria}}</div>
+          <div class="sub-title">{{item.nome_subcategoria}}</div>
+          <span class="description">{{item.comentario}}</span>
+          <span class="tag-date">01 Nov 2021</span>
+        </div>
+        <div class="btn-group-ajuda">
+            <div class="btn-detalhes">
+                <button class="btn btn-padrao" (click)="openModal(template, item)">Detalhes</button>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Detalhamento</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th>Auxiliado</th>
+                <td>{{ajudaSelecionada.nome_pessoa_auxiliado}}</td>
+              </tr>
+              <tr>
+                <th>Contribuinte</th>
+                <td>{{ajudaSelecionada.nome_pessoa_contribuinte}}</td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td>{{ajudaSelecionada.email}}</td>
+              </tr>
+              <tr>
+                <th>Telefone</th>
+                <td>{{ajudaSelecionada.telefone}}</td>
+              </tr>
+              <tr>
+                <th>Classificação</th>
+                <td>{{ajudaSelecionada.classificacao}}</td>
+              </tr>
+              <tr>
+                <th>Comentario</th>
+                <td>{{ajudaSelecionada.comentario}}</td>
+              </tr>
+              <tr>
+                <th>Categoria</th>
+                <td>{{ajudaSelecionada.nome_categoria}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </ng-template>
+<!-- 
 <div class="row">
     <div class="col-md-4">
         <div class="card">
@@ -89,4 +258,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

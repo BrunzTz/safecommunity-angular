@@ -8,7 +8,7 @@ export interface Ajudas {
 }
 
 export const STATUS: any = [
-    { nome: "UM", valor: 1},
-    { nome: "DOIS", valor: 2},
-    { nome: "TRÊS", valor: 3},
+    { nome: "Solicitado", valor: 1},
+    { nome: "Em Andamento", valor: 2},
+    { nome: "Finalizado", valor: 3},
 ]

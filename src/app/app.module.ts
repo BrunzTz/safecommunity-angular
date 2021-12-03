@@ -11,6 +11,7 @@ import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     PagesModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    NgSelectModule
+    NgSelectModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
